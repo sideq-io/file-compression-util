@@ -1,0 +1,13 @@
+services:
+  compressor:
+    build: .
+    env_file: .env
+    volumes:
+      - ./data:/data
+
+  uploader:
+    build: .
+    command: python upload.py
+    env_file: .env
+    volumes:
+      - ./data:/data
