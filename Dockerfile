@@ -1,9 +1,8 @@
 FROM python:3.12-slim
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends pngquant mozjpeg && \
-    rm -rf /var/lib/apt/lists/* && \
-    ln -sf /opt/mozjpeg/bin/cjpeg /usr/local/bin/cjpeg
+    apt-get install -y --no-install-recommends pngquant && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN pip install --no-cache-dir Pillow==11.1.0 boto3==1.36.0
 
